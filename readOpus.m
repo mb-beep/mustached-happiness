@@ -9,7 +9,7 @@ for i = 1:length(content)
     tmp = content(i);
     if(~tmp.isdir && ~isempty(strfind(tmp.name, '.mat')))
         tmpPath = [path filesep tmp.name];
-        load(content(i).name, 'AB');
+        load(tmpPath, 'AB');
         wn = AB(:,1);
         absorbance = [absorbance AB(:,2)];
     end
